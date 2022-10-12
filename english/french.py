@@ -9,8 +9,8 @@ from selenium.webdriver.support import expected_conditions as EC
 options.headless = True
 url = "https://translate.google.com/"
 
-def en_to_fren(word):
-        browser = webdriver.Firefox(executable_path="/home/david/Desktop/translate/geckodriver", options=options)
+def en_to_fren(word, geckodriver_path):
+        browser = webdriver.Firefox(executable_path=geckodriver_path, options=options)
         browser.get(url)
         
         WebDriverWait(browser, 30).until(EC.element_to_be_clickable(browser.find_element(By.CLASS_NAME, 'er8xn'))).send_keys(str(word))

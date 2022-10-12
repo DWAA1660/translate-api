@@ -13,13 +13,14 @@ from english.spanish import *
 
 
 class Translate():
-    def __init__(self):
+    def __init__(self, geckodriver_path):
         self.url = "https://translate.google.com/"
+        self.geckodriver_path = geckodriver_path
 
     def to_spanish(self, word: str):
-        return en_to_span(word=word)
+        return en_to_span(word=word, geckodriver_path=self.geckodriver_path)
     
     def to_french(self, word: str):
-        return en_to_fren(word=word)
+        return en_to_fren(word=word, geckodriver_path=self.geckodriver_path)
 # translation = Translate().to_spanish("hello i am stupid")
 # print(translation)
